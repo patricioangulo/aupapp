@@ -2,15 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('button').forEach(function(button) {
         button.onclick = function() {
 
-
-            const trplat = button.dataset.tr;
+            //toma el valor del botón seleccionado
+            const info = button.dataset.tr;
+            //toma el id del boton seleccionado
             const id = button.dataset.id;
-            //console.log(`${trplat}`);
+            //console.log(`${info}`);
+            //ejecuta las acciones de los botones
             if (id == "editar") {
-                editar(trplat);
+                editar(info);
             }
             if (id == "guardar") {
-                guardar(trplat);
+                guardar(info);
             }
 
         }
@@ -19,41 +21,51 @@ document.addEventListener('DOMContentLoaded', function() {
 }); //fin del DOMContentLoaded
 
 
-function editar(trplat) {
-    console.log(`${trplat}`);
-    var name = trplat;
-    console.log(`${name}`);
-    document.querySelector("[data-name=" + name + "] #editar").disabled = true;
-    document.querySelector("[data-name=" + name + "] #guardar").disabled = false;
+function editar(info) {
+    //console.log(`${info}`);
+    document.querySelector("[data-name=" + info + "] #editar").disabled = true;
+    document.querySelector("[data-name=" + info + "] #guardar").disabled = false;
+    const box = document.querySelector("[data-name=" + info + "] #checkbox1");
+    const box2 = document.querySelector("[data-name=" + info + "] #checkbox2");
+    const box3 = document.querySelector("[data-name=" + info + "] #checkbox3");
+    const box4 = document.querySelector("[data-name=" + info + "] #checkbox4");
 
-    var element = document.querySelector("[data-name=" + name + "] #checkbox1");
-    var element2 = document.querySelector("[data-name=" + name + "] #checkbox2");
-    var element3 = document.querySelector("[data-name=" + name + "] #checkbox3");
-    var element4 = document.querySelector("[data-name=" + name + "] #checkbox4");
-    console.log(`${element}`);
-    let holas = [element, element2, element3, element4];
-    holas.forEach(hola => {
-        hola.disabled = false;
-    });
+    if (box) {
+        box.disabled = false;
+    }
+    if (box2) {
+        box2.disabled = false;
+    }
+    if (box3) {
+        box3.disabled = false;
+    }
+    if (box4) {
+        box4.disabled = false;
+    }
 
 
 }
 
-function guardar(trplat) {
-    console.log(`${trplat}`);
-    var name = trplat;
-    console.log(`${name}`);
-    document.querySelector("[data-name=" + name + "] #editar").disabled = false;
-    document.querySelector("[data-name=" + name + "] #guardar").disabled = true;
+function guardar(info) {
+    console.log(`${info}`);
+    document.querySelector("[data-name=" + info + "] #editar").disabled = false;
+    document.querySelector("[data-name=" + info + "] #guardar").disabled = true;
+    const box = document.querySelector("[data-name=" + info + "] #checkbox1");
+    const box2 = document.querySelector("[data-name=" + info + "] #checkbox2");
+    const box3 = document.querySelector("[data-name=" + info + "] #checkbox3");
+    const box4 = document.querySelector("[data-name=" + info + "] #checkbox4");
 
-    var element = document.querySelector("[data-name=" + name + "] #checkbox1");
-    var element2 = document.querySelector("[data-name=" + name + "] #checkbox2");
-    var element3 = document.querySelector("[data-name=" + name + "] #checkbox3");
-    var element4 = document.querySelector("[data-name=" + name + "] #checkbox4");
-    console.log(`${element}`);
-    let holas = [element, element2, element3, element4];
-    holas.forEach(hola => {
-        hola.disabled = true;
-    });
+    if (box) {
+        box.disabled = true;
+    }
+    if (box2) {
+        box2.disabled = true;
+    }
+    if (box3) {
+        box3.disabled = true;
+    }
+    if (box4) {
+        box4.disabled = true;
+    }
 
 }
