@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar</title>
+</head>
+<style>
+
+</style>
+<script type="text/javascript" src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const opciones = document.querySelector('#opciones');
+
+        //seleccionar uno de los elementos
+        opciones.addEventListener('change', (event) => {
+            console.log(`${event.target.value}`)
+            if (`${event.target.value}` == 'grupo') {
+
+                document.getElementById("grupos").style.display = "block";
+                document.querySelector('.atributos-usuarios').style.display = "none";
+                //mostrar los elementos de la opción seleccionada
+                //mostrar elementos de "Grupo"
+                const grupos = document.querySelector('#grupos');
+
+                grupos.addEventListener('change', (event) => {
+                    console.log(`${event.target.value}`);
+                    document.querySelector('#nombre-grupo').innerHTML = `${event.target.value}`;
+                    document.querySelector('.grupo').style.display = "block";
+                    document.querySelector('.atributos-usuarios').style.display = "none";
+                    //document.querySelector('.checkbox').disabled = true;
+
+
+
+                })
+
+
+            } else {
+                document.getElementById("grupos").style.display = "none";
+            }
+
+            if (`${event.target.value}` == 'rol') {
+                document.getElementById("roles").style.display = "block";
+            } else {
+                document.getElementById("roles").style.display = "none";
+            }
+
+            if (`${event.target.value}` == 'usuario') {
+                document.getElementById("usuarios").style.display = "block";
+                document.querySelector('.grupo').style.display = "none";
+            } else {
+                document.getElementById("usuarios").style.display = "none";
+            }
+
+        });
+
+
+
+        //mostrar elementos de "Usuarios"
+        const usuarios = document.querySelector('#usuarios');
+
+        usuarios.addEventListener('change', (event) => {
+            console.log(`${event.target.value}`);
+            document.querySelector('#nombre-usuario');
+            document.querySelector('.atributos-usuarios').style.display = "block";
+            document.querySelector('.grupo').style.display = "none";
+
+
+        })
+
+        //document.getElementById("btn").style.display = "none";
+        document.getElementById("grupos").style.display = "none";
+        document.getElementById("roles").style.display = "none";
+        document.getElementById("usuarios").style.display = "none";
+        document.querySelector('.grupo').style.display = "none";
+        document.querySelector('.atributos-usuarios').style.display = "none";
+        document.querySelector('.checkbox').disabled = true;
+
+
+        document.getElementById('editar-plataforma1').onclick = editarPlataforma;
+        document.getElementById('editar-plataforma2').onclick = editarPlataforma2;
+        document.getElementById('editar-plataforma3').onclick = editarPlataforma3;
+
+        document.getElementById('guardar-plataforma1').onclick = guardarPlataforma;
+        document.getElementById('guardar-plataforma2').onclick = guardarPlataforma2;
+        document.getElementById('guardar-plataforma3').onclick = guardarPlataforma3;
+
+
+    });
+    //fin del DOMContentLoaded
+
+
+    function editarPlataforma() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma1 #checkbox1').disabled = false;
+        document.querySelector('#tr-plataforma1 #checkbox2').disabled = false;
+        document.querySelector('#tr-plataforma1 #checkbox3').disabled = false;
+        document.querySelector('#tr-plataforma1 #checkbox4').disabled = false;
+        document.querySelector('#tr-plataforma1 #editar-plataforma1').disabled = true;
+        document.querySelector('#tr-plataforma1 #guardar-plataforma1').disabled = false;
+    }
+
+    function editarPlataforma2() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma2 #checkbox1').disabled = false;
+        document.querySelector('#tr-plataforma2 #checkbox2').disabled = false;
+        document.querySelector('#tr-plataforma2 #checkbox3').disabled = false;
+        document.querySelector('#tr-plataforma2 #checkbox4').disabled = false;
+        document.querySelector('#tr-plataforma2 #editar-plataforma2').disabled = true;
+        document.querySelector('#tr-plataforma2 #guardar-plataforma2').disabled = false;
+    }
+
+    function editarPlataforma3() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma3 #checkbox1').disabled = false;
+        document.querySelector('#tr-plataforma3 #checkbox2').disabled = false;
+        document.querySelector('#tr-plataforma3 #checkbox3').disabled = false;
+        document.querySelector('#tr-plataforma3 #checkbox4').disabled = false;
+        document.querySelector('#tr-plataforma3 #editar-plataforma3').disabled = true;
+        document.querySelector('#tr-plataforma3 #guardar-plataforma3').disabled = false;
+    }
+
+    function guardarPlataforma() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma1 #checkbox1').disabled = true;
+        document.querySelector('#tr-plataforma1 #checkbox2').disabled = true;
+        document.querySelector('#tr-plataforma1 #checkbox3').disabled = true;
+        document.querySelector('#tr-plataforma1 #checkbox4').disabled = true;
+        document.querySelector('#tr-plataforma1 #editar-plataforma1').disabled = false;
+        document.querySelector('#tr-plataforma1 #guardar-plataforma1').disabled = true;
+    }
+
+    function guardarPlataforma2() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma2 #checkbox1').disabled = true;
+        document.querySelector('#tr-plataforma2 #checkbox2').disabled = true;
+        document.querySelector('#tr-plataforma2 #checkbox3').disabled = true;
+        document.querySelector('#tr-plataforma2 #checkbox4').disabled = true;
+        document.querySelector('#tr-plataforma2 #editar-plataforma2').disabled = false;
+        document.querySelector('#tr-plataforma2 #guardar-plataforma2').disabled = true;
+    }
+
+    function guardarPlataforma3() {
+        //console.log('hola');
+
+        document.querySelector('#tr-plataforma3 #checkbox1').disabled = true;
+        document.querySelector('#tr-plataforma3 #checkbox2').disabled = true;
+        document.querySelector('#tr-plataforma3 #checkbox3').disabled = true;
+        document.querySelector('#tr-plataforma3 #checkbox4').disabled = true;
+        document.querySelector('#tr-plataforma3 #editar-plataforma3').disabled = false;
+        document.querySelector('#tr-plataforma3 #guardar-plataforma3').disabled = true;
+    }
+</script>
+
+<body>
+    <h1>Modificación de permisos</h1>
+
+
+    <label for="opciones">Elige una opción:</label>
+    <select name="opciones" id="opciones">
+        <option value="">Seleccionar</option>
+        <option id="grupo" value="grupo">Grupo</option>
+        <option id="rol" value="rol">Rol</option>
+        <option id="usuario" value="usuario">Usuario</option>
+    </select>
+
+    <!--Listas  -->
+    <div>
+        <div>
+            <select multiple id='grupos'>
+            <option value="grupo 123">Grupo 1</option>
+            <option>Grupo 2</option>
+            <option>Grupo 3</option>
+            <option>Grupo 4</option>
+            <option>Grupo 5</option>
+            <option>Grupo 6</option>
+            <option>Grupo 7</option>
+            <option>Grupo 8</option>
+            <option>Grupo 9</option>
+            <option>Grupo 10</option>
+        </select>
+
+        </div>
+
+        <div>
+            <select multiple id='roles'>
+            <option>Rol 1</option>
+            <option>Rol 2</option>
+            <option>Rol 3</option>
+            <option>Rol 4</option>
+            <option>Rol 5</option>
+            <option>Rol 6</option>
+            <option>Rol 7</option>
+            <option>Rol 8</option>
+            <option>Rol 9</option>
+            <option>Rol 10</option>
+            <option>Rol 11</option>
+        </select>
+        </div>
+
+        <div>
+            <select multiple name="usuarios" id="usuarios">
+            <option>Usuario 1</option>
+            <option>Usuario 2</option>
+            <option>Usuario 3</option>
+            <option>Usuario 4</option>
+            <option>Usuario 5</option>
+            <option>Usuario 6</option>
+            <option>Usuario 7</option>
+            <option>Usuario 8</option>
+            <option>Usuario 9</option>
+            <option>Usuario 10</option>
+            <option>Usuario 11</option>
+            <option>Usuario 12</option>
+            <option>Usuario 13</option>
+            <option>Usuario 14</option>
+            <option>Usuario 15</option>
+            <option>Usuario 16</option>
+            <option>Usuario 17</option>
+            <option>Usuario 18</option>
+            <option>Usuario 19</option>
+            <option>Usuario 20</option>
+        </select>
+        </div>
+    </div>
+    <!-- Fin listas -->
+
+    <!-- Modificación de grupos -->
+    <div class="grupo">
+        <h1 id="nombre-grupo"></h1>
+        <table>
+            <tr>
+                <th>Plataforma</th>
+                <th>Atributo 1</th>
+                <th>Atributo 2</th>
+                <th>Atributo 3</th>
+                <th>Atributo 4</th>
+                <th></th>
+            </tr>
+            <tr data-name="tr-plataforma1">
+                <td>Plataforma 1</td>
+                <td><input id="checkbox1" type="checkbox" disabled></td>
+                <td><input id="checkbox2" type="checkbox" disabled checked></td>
+                <td><input id="checkbox3" type="checkbox" disabled checked></td>
+                <td><input id="checkbox4" type="checkbox" disabled></td>
+                <td><button data-tr="tr-plataforma1" data-id="editar" id="editar" type="button">Editar</button></td>
+                <td><button data-tr="tr-plataforma1" data-id="guardar" id="guardar" type="button" disabled>Guardar</button></td>
+            </tr>
+            <tr id="tr-plataforma2">
+                <td>Plataforma 2</td>
+                <td><input id="checkbox1" type="checkbox" name="checkbox" disabled checked></td>
+                <td><input id="checkbox2" type="checkbox" name="checkbox" disabled></td>
+                <td><input id="checkbox3" type="checkbox" name="checkbox" disabled></td>
+                <td><input id="checkbox4" type="checkbox" name="checkbox" disabled checked></td>
+                <td><button id="editar-plataforma2" type="button">Editar</button></td>
+                <td><button id="guardar-plataforma2" type="button" disabled>Guardar</button></td>
+            </tr>
+            <tr id="tr-plataforma3" data-tr="tr-plataforma1">
+                <td>Plataforma 3</td>
+                <td><input id="checkbox1" type="checkbox" disabled></td>
+                <td><input id="checkbox2" type="checkbox" disabled></td>
+                <td><input id="checkbox3" type="checkbox" disabled checked></td>
+                <td><input id="checkbox4" type="checkbox" disabled checked></td>
+                <td><button id="editar-plataforma3" type="button">Editar</button></td>
+                <td><button id="guardar-plataforma3" type="button" disabled>Guardar</button></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <!-- Modificación de usuarios -->
+    <div class="atributos-usuarios">
+        <h1 id="nombre-usuario"></h1>
+
+        <div class="plataforma-usuarios">
+            <h2>Plataformas</h2>
+            <table>
+                <tr data-name="tr-plataforma1">
+                    <td>Plataforma 1</td>
+                    <td><input id="checkbox1" type="checkbox" disabled checked></td>
+                    <td><button data-tr="tr-plataforma1" data-id="editar" id="editar" value="editar">Editar</button></td>
+                    <td><button data-tr="tr-plataforma1" data-id="guardar" id="guardar" disabled>Guardar</button></td>
+                </tr>
+                <tr data-name="tr-plataforma2">
+                    <td>Plataforma 2</td>
+                    <td><input id="checkbox1" type="checkbox" disabled></td>
+                    <td><button data-tr="tr-plataforma2" data-id="editar" id="editar" type="button">Editar</button></td>
+                    <td><button data-tr="tr-plataforma2" data-id="guardar" id="guardar" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr data-name="tr-plataforma3">
+                    <td>Plataforma 3</td>
+                    <td><input id="checkbox1" type="checkbox" disabled></td>
+                    <td><button data-tr="tr-plataforma3" data-id="editar" id="editar" type="button">Editar</button></td>
+                    <td><button data-tr="tr-plataforma3" data-id="guardar" id="guardar" type="button" disabled>Guardar</button></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="rol-usuarios">
+            <h2>Roles</h2>
+            <table>
+                <tr>
+                    <td>Rol 1</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-rol1" type="button">Editar</button></td>
+                    <td><button id="guardar-rol1" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Rol 2</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-rol2" type="button">Editar</button></td>
+                    <td><button id="guardar-rol2" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Rol 3</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-rol3" type="button">Editar</button></td>
+                    <td><button id="guardar-rol3" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Rol 4</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-rol4" type="button">Editar</button></td>
+                    <td><button id="guardar-rol4" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Rol 5</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-rol5" type="button">Editar</button></td>
+                    <td><button id="guardar-rol5" type="button" disabled>Guardar</button></td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="grupo-usuarios">
+            <h2>Grupos</h2>
+            <table>
+                <tr>
+                    <td>Grupo 1</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-plataforma3" type="button">Editar</button></td>
+                    <td><button id="guardar-plataforma3" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Grupo 2</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-plataforma3" type="button">Editar</button></td>
+                    <td><button id="guardar-plataforma3" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Grupo 3</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-plataforma3" type="button">Editar</button></td>
+                    <td><button id="guardar-plataforma3" type="button" disabled>Guardar</button></td>
+                </tr>
+                <tr>
+                    <td>Grupo 4</td>
+                    <td><input class="checkbox" type="checkbox" disabled checked></td>
+                    <td><button id="editar-plataforma3" type="button">Editar</button></td>
+                    <td><button id="guardar-plataforma3" type="button" disabled>Guardar</button></td>
+                </tr>
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+
+</body>
+
+</html>

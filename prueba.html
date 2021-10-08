@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+</head>
+
+<script type="text/javascript" src="script.js"></script>
+
+<body>
+
+    <div>
+        <select multiple id='grupos'>
+            <option value="grupo 123">Grupo 1</option>
+            <option>Grupo 2</option>
+            <option>Grupo 3</option>
+            <option>Grupo 4</option>
+            <option>Grupo 5</option>
+            <option>Grupo 6</option>
+            <option>Grupo 7</option>
+            <option>Grupo 8</option>
+            <option>Grupo 9</option>
+            <option>Grupo 10</option>
+        </select>
+
+    </div>
+
+    <div class="grupo">
+        <h1 id="nombre-grupo"></h1>
+
+
+
+        <table>
+            <tr>
+                <th>Plataforma</th>
+                <th>Atributo 1</th>
+                <th>Atributo 2</th>
+                <th>Atributo 3</th>
+                <th>Atributo 4</th>
+                <th></th>
+            </tr>
+            <tr data-name="tr-plataforma1">
+                <td>Plataforma 1</td>
+                <td><input id="checkbox1" type="checkbox" disabled></td>
+                <td><input id="checkbox2" type="checkbox" disabled checked></td>
+                <td><input id="checkbox3" type="checkbox" disabled checked></td>
+                <td><input id="checkbox4" type="checkbox" disabled></td>
+                <td><button data-tr="tr-plataforma1" data-id="editar" id="editar" value="editar">Editar</button></td>
+                <td><button data-tr="tr-plataforma1" data-id="guardar" id="guardar" disabled>Guardar</button></td>
+            </tr>
+            <tr data-name="tr-plataforma2">
+                <td>Plataforma 2</td>
+                <td><input id="checkbox1" type="checkbox" name="checkbox" disabled checked></td>
+                <td><input id="checkbox2" type="checkbox" name="checkbox" disabled></td>
+                <td><input id="checkbox3" type="checkbox" name="checkbox" disabled></td>
+                <td><input id="checkbox4" type="checkbox" name="checkbox" disabled checked></td>
+                <td><button data-tr="tr-plataforma2" data-id="editar" id="editar" type="button">Editar</button></td>
+                <td><button data-tr="tr-plataforma2" data-id="guardar" id="guardar" type="button" disabled>Guardar</button></td>
+            </tr>
+            <tr data-name="tr-plataforma3">
+                <td>Plataforma 3</td>
+                <div>
+                    <td><input id="checkbox1" type="checkbox" disabled></td>
+                    <td><input id="checkbox2" type="checkbox" disabled></td>
+                    <td><input id="checkbox3" type="checkbox" disabled checked></td>
+                    <td><input id="checkbox4" type="checkbox" disabled checked></td>
+                    <td><button data-tr="tr-plataforma3" data-id="editar" id="editar" type="button">Editar</button></td>
+                    <td><button data-tr="tr-plataforma3" data-id="guardar" id="guardar" type="button" disabled>Guardar</button></td>
+            </tr>
+        </table>
+
+        </div>
+
+</body>
+
+</html>

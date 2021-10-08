@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración</title>
+    <style>
+        div {
+            display: none;
+        }
+    </style>
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('div').forEach(div => {
+                div.style.display = 'none';
+            })
+
+            document.querySelector(`#${page}`).style.display = 'block';
+        }
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // document.querySelectorAll('button').forEach(button => {
+            //     button.onclick = function() {
+            //         showPage(this.dataset.page);
+            //     }
+            // })
+
+            document.querySelector('#button1').onclick = function() {
+                showPage(this.dataset.page);
+            }
+            document.querySelector('#button2').onclick = function() {
+                showPage(this.dataset.page);
+            }
+            document.querySelector('#button3').onclick = function() {
+                showPage(this.dataset.page);
+            }
+
+            document.querySelector('#aceptar').disable = false;
+        })
+    </script>
+
+</head>
+
+<body>
+    <h1>Administración de Permisos</h1>
+    <p>Nombre Usuario</p>
+    <p>Cerrar Sesión</p>
+
+    <button id="button1" data-page="page1">Crear</button>
+    <button id="button2" data-page="page2">Modificar</button>
+    <button id="button3" data-page="page3">Eliminar</button>
+
+
+
+
+    <div id="page1">
+        <h1>Crear</h1>
+
+        <button id="aceptar">Aceptar</button>
+    </div>
+    <div id="page2">
+        <h1>Modificar</h1>
+        <button id="aceptar">Aceptar</button>
+    </div>
+    <div id="page3">
+        <h1>Eliminar</h1>
+        <button id="aceptar">Aceptar</button>
+    </div>
+
+
+
+</body>
+
+</html>
